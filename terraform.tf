@@ -1,5 +1,11 @@
 terraform {
-  #cloud {}
+ cloud {
+    organization = "deploy_org"
+
+    workspaces {
+      name = "learn-terraform-circleci"
+    }
+ }
 
   required_providers {
     aws = {
@@ -7,7 +13,5 @@ terraform {
       version = "~> 4.4.0"
     }
   }
-
-  required_version = ">= 1.2.0"
+  #required_version = ">= 1.2.0"
 }
-
